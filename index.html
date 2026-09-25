@@ -1,112 +1,86 @@
 <!doctype html>
 <html lang="pl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#061f3d">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#061d3b">
 <title>Alek — kandydat do Samorządu Szkolnego</title>
 <style>
-:root{--navy:#061f3d;--navy2:#0a3158;--blue:#20afe6;--yellow:#ffd526;--paper:#fffaf0;--ink:#061f3d;--green:#a7e9bc;--purple:#d9c0ff;--orange:#ffae72}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
-nav{position:sticky;top:0;z-index:20;background:rgba(6,31,61,.96);backdrop-filter:blur(8px);padding:13px 10px;text-align:center;border-bottom:3px solid var(--yellow)}
-nav a{color:#fff;text-decoration:none;font-weight:900;margin:0 11px;font-size:14px}nav a:hover{color:var(--yellow)}
-.wrap{width:min(1120px,92%);margin:auto}.brush{display:inline-block;padding:8px 18px;background:var(--yellow);transform:rotate(-1deg);box-shadow:8px 6px 0 var(--blue)}
-.hero{position:relative;background:linear-gradient(135deg,var(--navy),#073d68 70%,#0a5d88);color:#fff;padding:34px 0 26px;overflow:hidden}
-.hero:before,.hero:after{content:"♪ ♫ ♬";position:absolute;font-size:60px;color:rgba(255,255,255,.08);transform:rotate(-12deg)}
-.hero:before{left:2%;top:8%}.hero:after{right:3%;bottom:4%}
-.hero-grid{display:grid;grid-template-columns:.95fr 1.25fr;gap:34px;align-items:center}
-.hero-photo{position:relative}.hero-photo img{width:100%;max-height:600px;object-fit:cover;border:9px solid #fff;border-radius:32px;box-shadow:14px 14px 0 var(--yellow);transform:rotate(-1deg)}
-.crown{font-size:62px;position:absolute;top:-36px;left:42%;transform:rotate(-8deg)}
-.kicker{font-weight:900;background:var(--yellow);color:var(--navy);display:inline-block;padding:8px 13px;transform:rotate(-2deg)}
-h1{font-size:clamp(48px,8vw,92px);line-height:.87;margin:18px 0 14px;letter-spacing:-3px}h1 span{color:var(--blue)}
-.hero p{font-size:21px;line-height:1.45}.quote{font-size:clamp(24px,3vw,38px)!important;font-weight:1000;color:var(--yellow);max-width:650px}
-.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:26px}.quick div{border-top:3px solid var(--yellow);padding:13px 5px;text-align:center;font-weight:900}.quick b{display:block;font-size:30px}
-section{padding:60px 0}.title{font-size:clamp(36px,5vw,58px);margin:0 0 28px;font-weight:1000;letter-spacing:-2px}.title span{background:var(--yellow);padding:4px 12px}
-.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}.lead{font-size:21px;line-height:1.65}
-.passions{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}.passion{border:4px solid var(--navy);border-radius:24px;padding:20px;background:#fff;box-shadow:7px 7px 0 var(--yellow);font-size:18px}.passion .ico{font-size:38px}.passion h3{margin:8px 0}
-.polaroid{background:#fff;padding:10px 10px 28px;box-shadow:0 10px 25px #0015;transform:rotate(2deg)}.polaroid img{width:100%;display:block;max-height:450px;object-fit:cover}.polaroid p{text-align:center;font-weight:900;margin:13px 0 0}
-.program{background:#fff}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.card{border:4px solid var(--navy);border-radius:24px;padding:22px;position:relative;overflow:hidden}.card:nth-child(1){background:#e9f8ff}.card:nth-child(2){background:#fff3b5}.card:nth-child(3){background:#e5faeb}.card:nth-child(4){background:#f0e5ff}.card h3{font-size:25px;margin:0 0 12px}.card ul{padding-left:22px;line-height:1.55;font-size:17px}
-.gallery{background:linear-gradient(180deg,#eaf8ff,#fffaf0)}.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.shot{background:white;border:5px solid white;box-shadow:7px 8px 0 var(--navy);border-radius:8px;overflow:hidden}.shot img{width:100%;height:360px;object-fit:cover;display:block}.shot figcaption{padding:13px;font-weight:900;text-align:center}.shot:nth-child(2){transform:rotate(-1.2deg)}.shot:nth-child(3){transform:rotate(1.2deg)}
-.game{background:var(--navy);color:white}.gamebox{border:5px solid var(--blue);border-radius:28px;padding:24px;background:#04172e;box-shadow:10px 10px 0 var(--yellow)}.stats{display:flex;justify-content:space-between;gap:10px;font-size:19px;font-weight:900;flex-wrap:wrap}
-#arena{height:390px;margin-top:18px;position:relative;overflow:hidden;border-radius:20px;background:radial-gradient(circle at 50% 100%,#0d5580,#04172e 65%);border:2px solid #1db6f0}
-.note{position:absolute;border:0;width:66px;height:66px;border-radius:50%;background:var(--yellow);color:var(--navy);font-size:37px;font-weight:900;cursor:pointer;box-shadow:0 0 0 5px white;touch-action:manipulation}
-.play{background:var(--yellow);color:var(--navy);border:0;border-radius:16px;padding:15px 25px;font-size:20px;font-weight:1000;margin-top:18px;cursor:pointer}.message{margin-left:12px;font-weight:900}
-.music-note{margin-top:16px;font-size:14px;color:#cceeff}.music-note button{background:transparent;color:white;border:2px solid var(--yellow);border-radius:12px;padding:9px 13px;font-weight:900;cursor:pointer}
-.cta{text-align:center;padding:55px 20px;background:var(--yellow);color:var(--navy)}.cta strong{font-size:clamp(42px,7vw,80px);display:block}.cta p{font-size:24px;font-weight:900}
-footer{text-align:center;background:var(--navy);color:white;padding:22px}
-@media(max-width:800px){nav a{margin:0 5px;font-size:12px}.hero-grid,.about-grid{grid-template-columns:1fr}.hero-photo{max-width:520px;margin:auto}.quick{grid-template-columns:repeat(2,1fr)}.cards,.gallery-grid,.passions{grid-template-columns:1fr}.shot img{height:auto}#arena{height:340px}.hero{padding-top:55px}}
-</style>
-</head>
+:root{--n:#061d3b;--b:#1fb3e8;--y:#ffd525;--w:#fffaf1;--g:#a7e8b9;--p:#d7bdff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--w);color:var(--n);overflow-x:hidden}
+nav{position:sticky;top:0;z-index:30;background:#061d3bf2;border-bottom:4px solid var(--y);padding:12px;text-align:center}
+nav a{color:white;text-decoration:none;font-weight:900;margin:0 10px;font-size:13px}.wrap{width:min(1120px,92%);margin:auto}
+.hero{background:radial-gradient(circle at 85% 15%,#0b5783,var(--n) 55%);color:white;position:relative;overflow:hidden;padding:35px 0}
+.hero:after{content:"♪  ♫  ♬  ★  ♫";position:absolute;bottom:-15px;left:2%;font-size:80px;color:#ffffff0c;letter-spacing:30px}
+.heroGrid{display:grid;grid-template-columns:1fr 1.05fr;gap:28px;align-items:center}
+.hero img{width:100%;display:block;border-radius:26px;box-shadow:12px 12px 0 var(--y);border:7px solid white}
+.badge{display:inline-block;background:var(--y);color:var(--n);font-weight:1000;padding:9px 15px;transform:rotate(-2deg)}
+h1{font-size:clamp(50px,8vw,94px);line-height:.88;margin:18px 0;letter-spacing:-4px}h1 span{color:var(--b)}
+.slogan{font-size:clamp(26px,4vw,42px);font-weight:1000;color:var(--y);line-height:1.05}
+.intro{font-size:20px;line-height:1.55}.chips{display:flex;gap:9px;flex-wrap:wrap}.chip{border:2px solid var(--b);border-radius:99px;padding:8px 13px;font-weight:900}
+section{padding:58px 0}.heading{font-size:clamp(38px,5vw,60px);letter-spacing:-2px;margin:0 0 28px}.heading span{background:var(--y);padding:4px 12px;box-shadow:8px 7px 0 var(--b)}
+.about{font-size:20px;line-height:1.65;max-width:900px}.passions{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.passion{background:white;border:4px solid var(--n);border-radius:22px;padding:20px;box-shadow:7px 7px 0 var(--y)}.passion b{font-size:25px}.ico{font-size:40px}
+.program{background:white}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:17px}.card{border:4px solid var(--n);border-radius:24px;padding:21px;box-shadow:7px 7px 0 var(--n)}
+.card:nth-child(1){background:#e9f8ff}.card:nth-child(2){background:#fff1a8}.card:nth-child(3){background:#e5f9ea}.card:nth-child(4){background:#eee2ff}.card h3{font-size:24px;margin:0 0 10px}.card li{margin:8px 0;line-height:1.35}
+.gallery{background:linear-gradient(#e9f8ff,var(--w))}.galleryGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:19px}.photo{background:white;border:6px solid white;box-shadow:8px 9px 0 var(--n);border-radius:10px;overflow:hidden}
+.photo img{width:100%;height:360px;object-fit:cover;display:block}.photo:first-child img{object-position:center}.caption{padding:14px;text-align:center;font-weight:1000;font-size:19px}.photo:nth-child(2){transform:rotate(-1deg)}.photo:nth-child(3){transform:rotate(1deg)}
+.game{background:var(--n);color:white}.gamebox{border:5px solid var(--b);border-radius:28px;padding:24px;background:#04162c;box-shadow:10px 10px 0 var(--y)}
+.stats{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:19px;font-weight:900}#arena{height:370px;position:relative;overflow:hidden;margin-top:18px;border:2px solid #1fb3e8;border-radius:18px;background:radial-gradient(circle at 50% 100%,#0d5884,#04162c 68%)}
+.note{position:absolute;width:66px;height:66px;border:0;border-radius:50%;background:var(--y);color:var(--n);box-shadow:0 0 0 5px white;font-size:36px;font-weight:900;cursor:pointer;touch-action:manipulation}
+.btn{border:0;border-radius:14px;background:var(--y);color:var(--n);font-size:18px;font-weight:1000;padding:13px 19px;cursor:pointer;margin:17px 8px 0 0}.btn.alt{background:var(--b)}
+#message{font-weight:900}.cta{text-align:center;background:var(--y);padding:55px 15px}.cta strong{font-size:clamp(44px,8vw,86px);display:block}.cta p{font-size:24px;font-weight:900}footer{background:var(--n);color:white;text-align:center;padding:22px}
+@media(max-width:800px){nav a{font-size:11px;margin:0 4px}.heroGrid,.cards,.galleryGrid,.passions{grid-template-columns:1fr}.heroGrid{display:flex;flex-direction:column}.photo img{height:auto}#arena{height:330px}h1{letter-spacing:-2px}}
+</style></head>
 <body>
-<nav><a href="#start">START</a><a href="#omnie">O MNIE</a><a href="#program">MÓJ PROGRAM</a><a href="#galeria">GALERIA</a><a href="#gra">GRA</a></nav>
+<nav><a href="#start">START</a><a href="#omnie">O MNIE</a><a href="#program">PROGRAM</a><a href="#galeria">GALERIA</a><a href="#gra">GRA</a></nav>
 
-<header class="hero" id="start"><div class="wrap hero-grid">
-  <div class="hero-photo"><div class="crown">👑</div><img src="alek.jpg" alt="Alek z saksofonem"></div>
-  <div>
-    <div class="kicker">KL. VI A • KANDYDAT DO SAMORZĄDU SZKOLNEGO</div>
-    <h1>ALEKSANDER<br><span>GNIEDZIEJKO</span></h1>
-    <p class="quote">„Dobre pomysły rodzą się z pasji!”</p>
-    <p>Muzyka, sport i pomysły uczniów. Chcę, żeby w naszej szkole było więcej okazji do rozwijania pasji, wspólnego działania i dobrej atmosfery.</p>
-    <div class="quick"><div><b>🎷</b>MUZYKA</div><div><b>💡</b>POMYSŁY</div><div><b>🚲</b>AKTYWNOŚĆ</div><div><b>🤝</b>ATMOSFERA</div></div>
-  </div>
-</div></header>
+<header class="hero" id="start"><div class="wrap heroGrid">
+<div><img src="alek-glowne.png" alt="Alek z saksofonem"></div>
+<div><div class="badge">KLASA VI A • KANDYDAT DO SAMORZĄDU</div>
+<h1>ALEKSANDER<br><span>GNIEDZIEJKO</span></h1>
+<div class="slogan">„Dobre pomysły rodzą się z pasji!”</div>
+<p class="intro">Muzyka, aktywność, pomysły uczniów i dobra atmosfera. Chcę szkoły, w której można rozwijać swoje zainteresowania i mieć wpływ na to, co dzieje się wokół nas.</p>
+<div class="chips"><span class="chip">🎷 MUZYKA</span><span class="chip">🏄 WINDSURFING</span><span class="chip">🚲 ROWER</span><span class="chip">💡 POMYSŁY</span></div>
+<button class="btn" id="topMusic">🔊 WŁĄCZ SAKSOFON</button>
+</div></div></header>
 
-<section id="omnie"><div class="wrap">
-  <h2 class="title"><span>Cześć, jestem Alek!</span></h2>
-  <div class="about-grid">
-    <div>
-      <p class="lead">Jestem uczniem klasy VI A i kandyduję do Samorządu Szkolnego. Moją największą pasją jest muzyka — gram na saksofonie i lubię występować razem z innymi. Ale muzyka to nie wszystko. Lubię też aktywnie spędzać czas: <strong>jeżdżę na rowerze i uprawiam windsurfing</strong>. Właśnie dlatego zależy mi na szkole, w której różne pasje mogą się spotykać, a dobre pomysły uczniów naprawdę mają znaczenie.</p>
-      <div class="passions">
-        <div class="passion"><div class="ico">🎷</div><h3>Saksofon</h3><div>Muzyka, koncerty i granie w zespole.</div></div>
-        <div class="passion"><div class="ico">🚲</div><h3>Rower</h3><div>Ruch, wycieczki i aktywne spędzanie czasu.</div></div>
-        <div class="passion"><div class="ico">🏄</div><h3>Windsurfing</h3><div>Wiatr, woda, sport i nowe wyzwania.</div></div>
-      </div>
-    </div>
-    <div class="polaroid"><img src="orkiestra.jpg" alt="Alek podczas występu orkiestry"><p>Muzyka łączy ludzi ♫</p></div>
-  </div>
+<section id="omnie"><div class="wrap"><h2 class="heading"><span>Cześć, jestem Alek!</span></h2>
+<p class="about">Jestem uczniem klasy VI A i kandyduję do Samorządu Szkolnego. Moją największą pasją jest muzyka — gram na saksofonie i lubię występować razem z innymi. Poza muzyką uwielbiam <b>windsurfing i jazdę na rowerze</b>. Te pasje nauczyły mnie, że warto próbować nowych rzeczy, działać razem i nie poddawać się po pierwszej próbie. Chciałbym, żeby w szkole każdy miał więcej okazji do pokazania tego, co naprawdę go interesuje.</p>
+<div class="passions"><div class="passion"><div class="ico">🎷</div><b>Muzyka</b><p>Saksofon, wspólne granie i energia, która łączy ludzi.</p></div><div class="passion"><div class="ico">🏄</div><b>Windsurfing</b><p>Wiatr, woda, koncentracja i podejmowanie nowych wyzwań.</p></div><div class="passion"><div class="ico">🚲</div><b>Rower</b><p>Ruch, przygoda i aktywne spędzanie czasu.</p></div></div>
 </div></section>
 
-<section class="program" id="program"><div class="wrap">
-  <h2 class="title"><span>Mój program</span></h2>
-  <div class="cards">
-    <article class="card"><h3>🎵 Muzyka w szkole — nasza energia!</h3><ul><li>„Muzyczne przerwy” z playlistami tworzonymi przez uczniów</li><li>Dzień Talentów — pokaż, co potrafisz</li><li>więcej okazji do uczniowskich występów</li></ul></article>
-    <article class="card"><h3>💡 Pomysły uczniów — realne zmiany!</h3><ul><li>skrzynka pomysłów, również online</li><li>regularne spotkania i rozmowy z uczniami</li><li>informacja, co udało się zrealizować</li><li>więcej inicjatyw tworzonych przez uczniów</li></ul></article>
-    <article class="card"><h3>🤝 Lepsza atmosfera = lepsza szkoła!</h3><ul><li>więcej wspólnych wydarzeń i integracji klas</li><li>dni tematyczne</li><li>strefy relaksu na przerwach</li><li>akcje charytatywne i wolontariat</li></ul></article>
-    <article class="card"><h3>⚽ Ruch, zabawa, pasja!</h3><ul><li>więcej turniejów sportowych między klasami</li><li>szkolne wyzwania aktywności</li><li>wydarzenia łączące muzykę, sport i różne zainteresowania</li></ul></article>
-  </div>
-</div></section>
+<section class="program" id="program"><div class="wrap"><h2 class="heading"><span>Mój program</span></h2>
+<div class="cards">
+<div class="card"><h3>🎵 Muzyka w szkole — nasza energia!</h3><ul><li>muzyczne przerwy z playlistami uczniów</li><li>Dzień Talentów</li><li>więcej okazji do uczniowskich występów</li></ul></div>
+<div class="card"><h3>💡 Pomysły uczniów — realne działania!</h3><ul><li>skrzynka pomysłów, również online</li><li>regularne rozmowy z uczniami</li><li>informacja, które propozycje udało się zrealizować</li></ul></div>
+<div class="card"><h3>🤝 Lepsza atmosfera = lepsza szkoła!</h3><ul><li>wspólne wydarzenia i integracja klas</li><li>dni tematyczne</li><li>strefy relaksu na przerwach</li><li>akcje charytatywne i wolontariat</li></ul></div>
+<div class="card"><h3>⚽ Ruch, zabawa, pasja!</h3><ul><li>turnieje między klasami</li><li>szkolne wyzwania aktywności</li><li>wydarzenia łączące różne pasje</li></ul></div>
+</div></div></section>
 
-<section class="gallery" id="galeria"><div class="wrap">
-  <h2 class="title"><span>Różne pasje, jeden Alek!</span></h2>
-  <div class="gallery-grid">
-    <figure class="shot"><img src="orkiestra.jpg" alt="Gra w orkiestrze"><figcaption>🎷 Muzyka i wspólne granie</figcaption></figure>
-    <figure class="shot"><img src="rower.jpg" alt="Alek na rowerze"><figcaption>🚲 Rower i aktywność</figcaption></figure>
-    <figure class="shot"><img src="windsurfing.jpg" alt="Windsurfing"><figcaption>🏄 Windsurfing i nowe wyzwania</figcaption></figure>
-  </div>
-</div></section>
+<section class="gallery" id="galeria"><div class="wrap"><h2 class="heading"><span>Różne pasje. Jeden Alek.</span></h2>
+<div class="galleryGrid">
+<figure class="photo"><img src="muzyka.png" alt="Muzyka"><figcaption class="caption">🎷 MUZYKA<br><small>Wspólne granie daje energię!</small></figcaption></figure>
+<figure class="photo"><img src="rower.png" alt="Rower"><figcaption class="caption">🚲 ROWER<br><small>Ruch, przygoda i nowe trasy.</small></figcaption></figure>
+<figure class="photo"><img src="windsurfing.png" alt="Windsurfing"><figcaption class="caption">🏄 WINDSURFING<br><small>Wiatr, woda i wyzwania.</small></figcaption></figure>
+</div></div></section>
 
-<section class="game" id="gra"><div class="wrap">
-  <h2 class="title"><span>Złap nutę! 🎶</span></h2>
-  <p style="font-size:20px">Klikaj pojawiające się nuty. Masz 30 sekund — spróbuj pobić swój rekord!</p>
-  <div class="gamebox">
-    <div class="stats"><span>Wynik: <b id="score">0</b></span><span>Czas: <b id="time">30</b>s</span><span>Rekord: <b id="best">0</b></span></div>
-    <div id="arena"></div>
-    <button class="play" id="startBtn">▶ ZAGRAJ!</button><span class="message" id="message"></span>
-    <div class="music-note">🎷 Możesz też włączyć delikatny saksofon w tle: <button id="musicBtn">WŁĄCZ MUZYKĘ</button><br><small>Przeglądarki wymagają kliknięcia użytkownika przed uruchomieniem dźwięku. Plik muzyczny dodamy jako <b>sax.mp3</b>.</small></div>
-    <audio id="bgMusic" src="sax.mp3" loop preload="none"></audio>
-  </div>
-</div></section>
+<section class="game" id="gra"><div class="wrap"><h2 class="heading"><span>Złap nutę! 🎶</span></h2>
+<p style="font-size:20px">Masz 30 sekund. Klikaj nuty i spróbuj pobić swój rekord!</p>
+<div class="gamebox"><div class="stats"><span>Wynik: <b id="score">0</b></span><span>Czas: <b id="time">30</b>s</span><span>Rekord: <b id="best">0</b></span></div>
+<div id="arena"></div><button class="btn" id="startBtn">▶ ZAGRAJ!</button><button class="btn alt musicToggle">🔊 WŁĄCZ MUZYKĘ</button> <span id="message"></span>
+</div></div></section>
 
-<section class="cta"><strong>GŁOSUJ NA MNIE!</strong><p>Różne pasje. Realne pomysły. Razem możemy więcej! ⭐</p></section>
+<section class="cta"><strong>GŁOSUJ NA MNIE!</strong><p>Różne pasje • realne pomysły • razem możemy więcej! ⭐</p></section>
 <footer>Aleksander Gniedziejko • klasa VI A</footer>
-
+<audio id="music" src="sax.mp3" loop preload="auto"></audio>
 <script>
+const music=document.getElementById('music'), musicButtons=[document.getElementById('topMusic'),...document.querySelectorAll('.musicToggle')];
+function labels(on){musicButtons.forEach(b=>b.textContent=on?'🔇 WYŁĄCZ SAKSOFON':'🔊 WŁĄCZ SAKSOFON')}
+musicButtons.forEach(b=>b.onclick=async()=>{if(music.paused){try{await music.play();labels(true)}catch(e){}}else{music.pause();labels(false)}});
+
 const arena=document.getElementById('arena'),scoreEl=document.getElementById('score'),timeEl=document.getElementById('time'),bestEl=document.getElementById('best'),btn=document.getElementById('startBtn'),msg=document.getElementById('message');
 let score=0,time=30,timer,spawn,running=false,best=Number(localStorage.getItem('alekBest')||0);bestEl.textContent=best;
-function note(){if(!running)return;const n=document.createElement('button');n.className='note';n.textContent=['♪','♫','♬'][Math.floor(Math.random()*3)];n.style.left=Math.random()*Math.max(0,arena.clientWidth-72)+'px';n.style.top=Math.random()*Math.max(0,arena.clientHeight-72)+'px';n.onclick=()=>{score++;scoreEl.textContent=score;n.remove();note()};arena.appendChild(n);setTimeout(()=>n.remove(),1050)}
+function addNote(){if(!running)return;const n=document.createElement('button');n.className='note';n.textContent=['♪','♫','♬'][Math.floor(Math.random()*3)];n.style.left=Math.random()*Math.max(0,arena.clientWidth-72)+'px';n.style.top=Math.random()*Math.max(0,arena.clientHeight-72)+'px';n.onclick=()=>{score++;scoreEl.textContent=score;n.remove();addNote()};arena.appendChild(n);setTimeout(()=>n.remove(),1050)}
 function finish(){running=false;clearInterval(timer);clearInterval(spawn);arena.innerHTML='';if(score>best){best=score;localStorage.setItem('alekBest',best);bestEl.textContent=best;msg.textContent='Nowy rekord! 🏆'}else msg.textContent='Koniec! Spróbuj jeszcze raz.';btn.textContent='↻ ZAGRAJ PONOWNIE'}
-btn.onclick=()=>{clearInterval(timer);clearInterval(spawn);arena.innerHTML='';score=0;time=30;running=true;msg.textContent='';scoreEl.textContent=0;timeEl.textContent=30;btn.textContent='GRA TRWA…';note();spawn=setInterval(note,680);timer=setInterval(()=>{time--;timeEl.textContent=time;if(time<=0)finish()},1000)}
-const music=document.getElementById('bgMusic'),musicBtn=document.getElementById('musicBtn');
-musicBtn.onclick=async()=>{try{if(music.paused){await music.play();musicBtn.textContent='WYŁĄCZ MUZYKĘ'}else{music.pause();musicBtn.textContent='WŁĄCZ MUZYKĘ'}}catch(e){alert('Najpierw dodaj do repozytorium plik sax.mp3.')}} 
-</script>
-</body></html>
+btn.onclick=()=>{clearInterval(timer);clearInterval(spawn);arena.innerHTML='';score=0;time=30;running=true;msg.textContent='';scoreEl.textContent=0;timeEl.textContent=30;btn.textContent='GRA TRWA…';addNote();spawn=setInterval(addNote,680);timer=setInterval(()=>{time--;timeEl.textContent=time;if(time<=0)finish()},1000)}
+</script></body></html>
