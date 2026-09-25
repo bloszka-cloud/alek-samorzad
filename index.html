@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alek — kandydat do Samorządu Szkolnego</title>
+<style>
+:root{--navy:#071f3f;--blue:#19aeea;--yellow:#ffd51f;--paper:#fffaf0;--green:#8ee2ae;--purple:#d5b5ff}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;background:var(--paper);color:var(--navy)}
+nav{position:sticky;top:0;z-index:5;background:var(--navy);padding:12px;text-align:center}
+nav a{color:white;text-decoration:none;font-weight:800;margin:0 10px}
+.wrap{max-width:1100px;margin:auto;padding:24px}
+.hero{background:linear-gradient(135deg,var(--navy),#0b4d78);color:white;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:28px;align-items:center}
+.hero img{width:100%;max-height:560px;object-fit:cover;border:8px solid white;border-radius:28px}
+h1{font-size:clamp(46px,8vw,90px);line-height:.9;margin:0}
+h1 span{color:var(--blue)} .tag{display:inline-block;background:var(--yellow);color:var(--navy);font-weight:900;padding:9px 14px;transform:rotate(-2deg)}
+.quote{font-size:24px;font-weight:900;color:var(--yellow)}
+h2{font-size:40px;margin:8px 0 22px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.card{padding:22px;border:4px solid var(--navy);border-radius:22px;background:white;box-shadow:7px 7px 0 var(--yellow)}
+.card h3{font-size:24px;margin:0 0 10px}.card:nth-child(3){background:#eafff1}.card:nth-child(4){background:#f4eaff}
+.about{font-size:19px;line-height:1.6}
+.gamebox{background:var(--navy);color:white;border-radius:28px;padding:24px}
+.gamehead{display:flex;justify-content:space-between;font-weight:900;font-size:20px}
+#arena{height:380px;margin-top:16px;position:relative;overflow:hidden;border:4px solid var(--blue);border-radius:20px;background:linear-gradient(#082b52,#06182f)}
+.note{position:absolute;border:0;background:var(--yellow);color:var(--navy);font-size:34px;width:62px;height:62px;border-radius:50%;cursor:pointer;box-shadow:0 0 0 5px white}
+button{background:var(--yellow);border:0;padding:15px 24px;border-radius:15px;font-weight:900;font-size:20px;cursor:pointer;margin-top:16px}
+#message{font-size:20px;font-weight:800;margin-left:14px}
+footer{background:var(--navy);color:white;text-align:center;padding:30px;font-size:22px;font-weight:900}
+@media(max-width:750px){.hero .wrap{grid-template-columns:1fr}.cards{grid-template-columns:1fr}nav a{font-size:13px;margin:0 5px}#arena{height:330px}}
+</style>
+</head>
+<body>
+<nav><a href="#start">START</a><a href="#omnie">O MNIE</a><a href="#program">PROGRAM</a><a href="#gra">GRA</a></nav>
+
+<header class="hero" id="start">
+ <div class="wrap">
+  <img src="alek.jpg" alt="Alek">
+  <div>
+   <div class="tag">KL. VI A • KANDYDAT DO SAMORZĄDU</div>
+   <h1>ALEKSANDER<br><span>GNIEDZIEJKO</span></h1>
+   <p class="quote">„Dobre pomysły rodzą się z pasji!”</p>
+   <p>🎷 Muzyka łączy ludzi • 💡 Realne pomysły • 🤝 Lepsza atmosfera</p>
+  </div>
+ </div>
+</header>
+
+<section class="wrap" id="omnie">
+ <h2>Cześć, jestem Alek! 👋</h2>
+ <p class="about">Jestem uczniem klasy VI A i kandyduję do Samorządu Szkolnego. Muzyka jest jedną z moich największych pasji — gram na saksofonie. Chciałbym, żeby uczniowie mieli więcej okazji do rozwijania swoich zainteresowań, wspólnego działania i dzielenia się pomysłami. Zależy mi na szkole, w której każdy głos może zostać usłyszany.</p>
+</section>
+
+<section class="wrap" id="program">
+ <h2>Mój program</h2>
+ <div class="cards">
+  <article class="card"><h3>🎵 Więcej muzyki w szkole</h3><p>Muzyczne przerwy, playlisty tworzone przez uczniów, Dzień Talentów oraz więcej okazji do uczniowskich występów.</p></article>
+  <article class="card"><h3>💡 Wasze pomysły — realne działania</h3><p>Skrzynka pomysłów, regularne rozmowy z uczniami i informowanie, które propozycje udało się zrealizować.</p></article>
+  <article class="card"><h3>🤝 Lepsza atmosfera = lepsza szkoła</h3><p>Więcej wspólnych wydarzeń, dni tematyczne, integracja klas i inicjatywy tworzone przez uczniów.</p></article>
+  <article class="card"><h3>⚽ Ruch, zabawa, pasja</h3><p>Turnieje sportowe między klasami, szkolne wyzwania oraz wydarzenia łączące różne zainteresowania.</p></article>
+ </div>
+</section>
+
+<section class="wrap" id="gra">
+ <h2>🎶 Złap nutę!</h2>
+ <div class="gamebox">
+  <p>Klikaj pojawiające się nuty. Masz 30 sekund. Ile punktów zdobędziesz?</p>
+  <div class="gamehead"><span>Wynik: <b id="score">0</b></span><span>Czas: <b id="time">30</b>s</span><span>Rekord: <b id="best">0</b></span></div>
+  <div id="arena"></div>
+  <button id="startBtn">▶ ZAGRAJ!</button><span id="message"></span>
+ </div>
+</section>
+
+<footer>GŁOSUJ NA MNIE! ⭐ RAZEM MOŻEMY WIĘCEJ!</footer>
+
+<script>
+const arena=document.getElementById('arena'), scoreEl=document.getElementById('score'),
+timeEl=document.getElementById('time'), bestEl=document.getElementById('best'),
+btn=document.getElementById('startBtn'), msg=document.getElementById('message');
+let score=0,time=30,timer=null,spawn=null,running=false;
+let best=Number(localStorage.getItem('alekBest')||0); bestEl.textContent=best;
+function addNote(){
+ if(!running)return;
+ const n=document.createElement('button'); n.className='note'; n.textContent=['♪','♫','♬'][Math.floor(Math.random()*3)];
+ const maxX=Math.max(0,arena.clientWidth-70), maxY=Math.max(0,arena.clientHeight-70);
+ n.style.left=Math.random()*maxX+'px'; n.style.top=Math.random()*maxY+'px';
+ n.onclick=()=>{score++;scoreEl.textContent=score;n.remove();addNote()};
+ arena.appendChild(n); setTimeout(()=>n.remove(),1100);
+}
+function finish(){
+ running=false;clearInterval(timer);clearInterval(spawn);arena.innerHTML='';
+ if(score>best){best=score;localStorage.setItem('alekBest',best);bestEl.textContent=best;msg.textContent='Nowy rekord! 🏆'}
+ else msg.textContent='Koniec! Spróbuj pobić rekord.';
+ btn.textContent='↻ ZAGRAJ PONOWNIE';
+}
+btn.onclick=()=>{
+ clearInterval(timer);clearInterval(spawn);arena.innerHTML='';score=0;time=30;running=true;msg.textContent='';
+ scoreEl.textContent=0;timeEl.textContent=30;btn.textContent='GRA TRWA…';
+ addNote();spawn=setInterval(addNote,700);
+ timer=setInterval(()=>{time--;timeEl.textContent=time;if(time<=0)finish()},1000);
+};
+</script>
+</body></html>
